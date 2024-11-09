@@ -15,3 +15,11 @@ jobs:
     steps:
       - name: show software version
         run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: shell-cmd-job
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexit
